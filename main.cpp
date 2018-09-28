@@ -1,6 +1,6 @@
 //Carlos Ivan Romero Hernandez RH18030
 
-//LibrerÌas 
+//Librer√≠as 
 #include <iostream>
 #include <stdlib.h>//para control de procesos
 #include <time.h>//para el tiempo en srand
@@ -9,7 +9,7 @@
 using namespace std;
 
 //Declaracion de funciones
-void ejecutar(char tablero[3][3]);//Recopila las dem·s funciones en un orden especificado
+void ejecutar(char tablero[3][3]);//Recopila las dem√°s funciones en un orden especificado
 void tabInicio(char tablero[3][3]);//valores de inicio del tablero
 void tab(char tablero[3][3]);//Muestra el tablero
 void introFicha(char tablero[3][3]);//Funcion para que el usuario coloque su ficha, por defecto X
@@ -22,20 +22,18 @@ int main() {
 	//matriz tablero
 	char tablero[3][3];
 
- //llama a ja funcion ejecutar
- ejecutar(tablero);
+        //llama a ja funcion ejecutar
+         ejecutar(tablero);
     
-    
-
-	system("pause");
+system("pause");
 }
+//Recopila las dem√°s funciones en un orden especificado
 void ejecutar(char tablero[3][3]){
 	
 	//variables
 	int i=0;//contador, hasta 9 intentos
 	int j;//igualdad a funcion ganador
-	
-	
+		
 	//Se ejecutan los valores iniciales del tablero
 	tabInicio(tablero);
 	
@@ -43,16 +41,13 @@ void ejecutar(char tablero[3][3]){
 	do{
 		 l();//se limpia la pantalla
 		 tab(tablero);//muestra el tablero 
-		 
-		 
+		 		 
 		 if(i % 2==0)//si el modulo de 2 es 0, es el turno del usuario
 		 {
 		 	//el usuario juega su turno
 		 	introFicha(tablero);
-		 	
 		 }else{
-		 	
-		 	//se genera una posicion para "la maquina"
+		  	//se genera una posicion para "la maquina"
 		 	introIA(tablero);
 		 }
 		 //Muestra el tablero
@@ -77,7 +72,6 @@ void ejecutar(char tablero[3][3]){
 		cout<<" "<<endl;
 		cout<<"Has Empatado :|"<<endl;
 	}
-	
 }
 //Valores iniciales del tablero
 void tabInicio(char tablero[3][3]){
@@ -90,13 +84,8 @@ void tabInicio(char tablero[3][3]){
 		for(int j=0; j<3; j++){
 			
 			tablero[i][j]=aux++;//se llenan las posiciones desde 1 hasta 9
-			
-							
-			}
-	
-	
-	}
-	
+                }
+       }
 }
 //mustra el tablero en pantalla
 void tab(char tablero[3][3]){
@@ -105,21 +94,18 @@ void tab(char tablero[3][3]){
 		for(int i=0; i<3; i++){
 		for(int j=0; j<3; j++){
 			
-			
 			//configuraciones para la parte grafica del tablero
-			if(j<2){
-			
+			if(j<2){			
 			cout<<tablero[i][j]<<" | ";
-			}else{
-				
-				cout<<""<<tablero[i][j];
+			}else{				
+			cout<<""<<tablero[i][j];
 			}
 		}
 		if(i<2);
 		cout<<endl;
-	    cout<<"----------";
+	        cout<<"----------";
 		  
-	cout<<endl;
+	        cout<<endl;
 		}
 	}
 //Funcion para que el usuario juegue si turno	
@@ -133,8 +119,7 @@ void introFicha(char tablero[3][3]){
 			k=0;//se inicializa k en 0, esto permite que el ciclo se repita
 		    //Ciclio anidado para el ingreso correcto de la posicion a seleccionar
 			do{ 
-		    
-			cout<<"Ingresa tu ficha al numero deseado: ";
+		    cout<<"Ingresa tu ficha al numero deseado: ";
 		    cin>>aux;
 		    
 		    }while(aux < '1' || aux > '9');//Solo adimite valores entre 1 y 9
@@ -148,61 +133,44 @@ void introFicha(char tablero[3][3]){
 			Esto se comprueba para los 9 casos posibles 
 			
 			*/
-			case '1': {
-				
+			case '1': {				
 				if(tablero[0][0]=='X' || tablero[0][0]=='O'){
-					k=1; 
-             
-                   cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
-					
+				k=1;              
+                                cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
 				}else{
-					tablero[0][0]='X';
-					
+				tablero[0][0]='X';
 				}
-				
 				break;
 			}
 			
 			case '2': {
 				
 				if(tablero[0][1]=='X' || tablero[0][1]=='O'){
-					k=1; 
-             
-                   cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
-					
+				k=1; 
+                                cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
 				}else{
-					tablero[0][1]='X';
-					
+				tablero[0][1]='X';
 				}
-				
 				break;
 			}
 			case '3': {
 				
 				if(tablero[0][2]=='X' || tablero[0][2]=='O'){
-					k=1; 
-             
-                   cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
-					
+				k=1; 
+                                cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
 				}else{
-					tablero[0][2]='X';
-					
+				tablero[0][2]='X';
 				}
-				
 				break;
 			}
 			case '4': {
 				
 				if(tablero[1][0]=='X' || tablero[1][0]=='O'){
-					k=1; 
-             
-                   cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
-					
+				k=1; 
+                                cout<<"Esta casilla esta ocupada, prueba con otra posicion"<< endl; 
 				}else{
-					tablero[1][0]='X';
-					
+				tablero[1][0]='X';
 				}
-				
 				break;
 			}
 			case '5': {
@@ -299,7 +267,7 @@ void introIA(char tablero[3][3]){
 		j=rand()%3;
 		
 		k=0;
-		//Determina si es posicion est· ocupada, si no ingresa la ficha por defecto: O
+		//Determina si es posicion est√° ocupada, si no ingresa la ficha por defecto: O
 		if(tablero[i][j]=='X' || tablero[i][j]=='O'){
 			
 			k=1;
